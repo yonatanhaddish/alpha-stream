@@ -1,13 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { fetchData } from "./api/apiService";
+import { fetchData, testFunction } from "./api/apiService";
 
 function App() {
+  const [listMovies, setListMovies] = useState([]);
   useEffect(() => {
-    fetchData();
+    fetchResponse();
   }, []);
+
+  async function fetchResponse() {
+    try {
+      const response = await fetchData();
+      console.log("444444444", response);
+      setListMovies(response);
+    } catch (err) {
+      throw err;
+    }
+  }
+
   return (
     <>
-      <h1>Testing...Again</h1>
+      <div>
+        <h1>Test</h1>
+      </div>
     </>
   );
 }
