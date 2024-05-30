@@ -8,6 +8,7 @@ function Navbar() {
 
   function handleSearch(e) {
     setSearchRestult(e.target.value);
+    console.log("333333333", searchResult);
   }
 
   return (
@@ -32,15 +33,12 @@ function Navbar() {
         </div>
         <div className="searchBox">
           <div className="searchIcon">
-            <FontAwesomeIcon icon={faSearch} />
-          </div>
-          <div className="iconAndTextFieldBox">
             <div className="icon">
               {" "}
               <FontAwesomeIcon icon={faSearch} />
             </div>
             <div className="searchField">
-              <textarea value={searchResult} onChange={handleSearch} />
+              <input value={searchResult} onChange={handleSearch} />
             </div>
           </div>
         </div>

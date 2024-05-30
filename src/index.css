@@ -7,12 +7,11 @@
 .navbarBox {
   border: solid green 2px;
   display: flex;
-  justify-content: space-between;
   width: 100%;
 }
 .logoBox {
   font-size: 50px;
-  /* border: solid 1px red; */
+  border: solid 1px red;
   padding: 10px 0 0 40px;
 }
 .navbarListBox {
@@ -20,9 +19,20 @@
   display: flex;
   justify-content: space-evenly;
 }
-.searchBox {
-  border: solid 1px blue;
-}
+
 #navList {
   padding: 20px;
+}
+#navList a {
+  text-decoration: none;
+  border: solid 1px green;
+  font-size: 20px;
+}
+.searchBox {
+  border: solid 1px blue;
+  margin-left: 400px;
+}
+.searchIcon {
+  /* border: solid red 2px; */
+  padding-top: 15px;
 }
