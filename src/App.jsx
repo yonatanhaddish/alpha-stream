@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { fetchData, testFunction } from "./api/apiService";
+import { BrowserRouter } from "react-router-dom";
+import { fetchData } from "./api/apiService";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [listMovies, setListMovies] = useState([]);
@@ -19,9 +21,11 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>Test</h1>
-      </div>
+      <BrowserRouter>
+        <div className="parentBox">
+          <Navbar />
+        </div>
+      </BrowserRouter>
     </>
   );
 }
