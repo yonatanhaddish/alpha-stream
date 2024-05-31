@@ -11,13 +11,14 @@
 }
 .logoBox {
   font-size: 50px;
-  border: solid 1px red;
+  /* border: solid 2px red; */
   padding: 10px 0 0 40px;
 }
 .navbarListBox {
-  border: solid green 1px;
+  /* border: solid purple 2px; */
+  margin-left: 100px;
+  padding-top: 15px;
   display: flex;
-  justify-content: space-evenly;
 }
 
 #navList {
@@ -25,14 +26,19 @@
 }
 #navList a {
   text-decoration: none;
-  border: solid 1px green;
+  /* border: solid 1px green; */
   font-size: 20px;
 }
 .searchBox {
-  border: solid 1px blue;
-  margin-left: 400px;
+  display: flex;
+  /* border: solid 2px blue; */
+  padding-left: 100px;
+  padding-top: 30px;
+  /* font-size: 20px; */
 }
-.searchIcon {
-  /* border: solid red 2px; */
-  padding-top: 15px;
+.input {
+  height: 30px;
+  padding-left: 10px;
+  font-size: 20px;
+  border: solid 2px black;
 }

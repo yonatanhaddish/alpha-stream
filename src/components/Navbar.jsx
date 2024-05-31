@@ -15,7 +15,13 @@ function Navbar() {
     <>
       <div className="navbarBox">
         <div className="logoBox">
-          <FontAwesomeIcon icon={faDesktop} />
+          <FontAwesomeIcon
+            icon={faDesktop}
+            style={{
+              color: "blueviolet",
+              fontSize: "40px",
+            }}
+          />
         </div>
         <div className="navbarListBox">
           <div className="homeBox" id="navList">
@@ -32,15 +38,13 @@ function Navbar() {
           </div>
         </div>
         <div className="searchBox">
-          <div className="searchIcon">
-            <div className="icon">
-              {" "}
-              <FontAwesomeIcon icon={faSearch} />
-            </div>
-            <div className="searchField">
-              <input value={searchResult} onChange={handleSearch} />
-            </div>
-          </div>
+          <input
+            className="input"
+            placeholder="Search"
+            value={searchResult}
+            onChange={handleSearch}
+            size={30}
+          />
         </div>
       </div>
     </>
@@ -48,3 +52,9 @@ function Navbar() {
 }
 
 export default Navbar;
+{
+  /* <div className="icon">
+            {" "}
+            <FontAwesomeIcon icon={faSearch} style={{ height: "25px" }} />
+          </div> */
+}
