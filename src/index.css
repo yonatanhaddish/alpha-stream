@@ -4,8 +4,12 @@
   margin: 0;
   font-family: "Source Sans Pro", "sans-serif";
 }
+.parentBox {
+  background-color: #ededeb;
+}
 .navbarBox {
-  border: solid green 2px;
+  /* border: solid green 2px; */
+  background-color: #c3d4f7;
   display: flex;
   width: 100%;
 }
@@ -16,7 +20,7 @@
 }
 .navbarListBox {
   /* border: solid purple 2px; */
-  margin-left: 100px;
+  margin-left: 60px;
   padding-top: 15px;
   display: flex;
 }
@@ -32,7 +36,7 @@
 .searchBox {
   display: flex;
   /* border: solid 2px blue; */
-  padding-left: 100px;
+  padding-left: 120px;
   padding-top: 30px;
   /* font-size: 20px; */
 }

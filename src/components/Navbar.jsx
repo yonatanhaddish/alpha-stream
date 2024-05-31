@@ -18,7 +18,7 @@ function Navbar() {
           <FontAwesomeIcon
             icon={faDesktop}
             style={{
-              color: "blueviolet",
+              color: "#68198c",
               fontSize: "40px",
             }}
           />
