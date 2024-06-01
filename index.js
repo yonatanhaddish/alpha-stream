@@ -1,4 +1,4 @@
-const array = [1, 2, 3, 4];
+const array = [3, 2, 4, 2];
 const output = [];
 // output = [16,24,12,24]
 
@@ -7,11 +7,13 @@ for (let i = 0; i < array.length; i++) {
   let product = 1;
   for (let j = 0; j < array.length; j++) {
     if (i != j) {
-      product = product * array[j];
-    } else {
-      product = product * 1;
+      product *= array[j];
     }
+  }
+  if (product == -0) {
+    product = 0;
   }
   output.push(product);
 }
-console.log("ppppppp", output);
+console.log("array", array);
+console.log("output", output);
