@@ -1,20 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { fetchData } from "./api/apiService";
+import { fetchMoviesData, fetchSeriesMoviesData } from "./api/apiService";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ListCarasoul from "./components/ListCarasoul";
 
 function App() {
   const [listMovies, setListMovies] = useState([]);
+  const [listSeriesMovies, setListSeriesMovies] = useState([]);
   useEffect(() => {
-    fetchResponse();
+    fetchMovies();
+    // fetchSeriesMoviesData();
   }, []);
 
-  async function fetchResponse() {
+  async function fetchMovies() {
     try {
-      const response = await fetchData();
+      const response = await fetchMoviesData();
       console.log("444444444", response);
       setListMovies(response);
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async function fetchSeriesMoviesData() {
+    try {
+      const response = await fetchSeriesMoviesData();
+      console.log("11111111", response);
     } catch (err) {
       throw err;
     }
@@ -25,7 +37,7 @@ function App() {
       <BrowserRouter>
         <div className="parentBox">
           <Navbar />
-          <Footer />
+          <ListCarasoul />
           <Footer />
         </div>
       </BrowserRouter>
