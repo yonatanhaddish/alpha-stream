@@ -46,20 +46,13 @@ function ListCarasoul() {
   };
 
   return (
-    <Box sx={{ maxWidth: "100%", flexGrow: 1 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          height: 50,
-          pl: 2,
-          bgcolor: "background.default",
-        }}
-      >
-        {/* <Typography>{listMoviesT[activeStep].name}</Typography> */}
-      </Paper>
+    <Box
+      sx={{
+        maxWidth: "100%",
+        flexGrow: 1,
+        marginTop: 3,
+      }}
+    >
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -72,11 +65,12 @@ function ListCarasoul() {
               <Box
                 component="img"
                 sx={{
-                  height: 255,
+                  width: 350,
+                  height: 350,
                   display: "block",
-                  maxWidth: "400",
+                  // maxWidth: "400",
                   overflow: "hidden",
-                  width: "80%%",
+                  marginLeft: 60,
                 }}
                 src={`https://image.tmdb.org/t/p/w300/${step.poster_path}`}
                 alt={step.name}
