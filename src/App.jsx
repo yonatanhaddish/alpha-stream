@@ -1,46 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { fetchMoviesData, fetchSeriesMoviesData } from "./api/apiService";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ListCarasoul from "./components/ListCarasoul";
+import Movies from "./pages/Movies";
 
 function App() {
-  const [listMovies, setListMovies] = useState([]);
-  const [listSeriesMovies, setListSeriesMovies] = useState([]);
-  useEffect(() => {
-    fetchMovies();
-    // fetchSeriesMoviesData();
-  }, []);
-
-  async function fetchMovies() {
-    try {
-      const response = await fetchMoviesData();
-      console.log("444444444", response);
-      setListMovies(response);
-    } catch (err) {
-      throw err;
-    }
-  }
-
-  async function fetchSeriesMoviesData() {
-    try {
-      const response = await fetchSeriesMoviesData();
-      console.log("11111111", response);
-    } catch (err) {
-      throw err;
-    }
-  }
-
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <div className="parentBox">
           <Navbar />
-          <ListCarasoul />
+          <Routes>
+            <Route path="/" element={<ListCarasoul />} />
+            <Route path="/movies" element={<Movies />} />
+          </Routes>
           <Footer />
         </div>
-      </BrowserRouter>
+      </Router>
     </>
   );
 }

@@ -10,18 +10,25 @@ export async function fetchMoviesData() {
     throw err;
   }
 }
-
-// export async function fetchSeriesMoviesData() {
-//   try {
-//     const response = await axios.get("https://api.tvmaze.com/shows", {
-//       params: {
-//         page: 0,
-//         size: 5,
-//       },
-//     });
-//     const shows = response.data;
-//     console.log(shows);
-//   } catch (err) {
-//     throw err;
-//   }
-// }
+export const adLists = [
+  {
+    id: 1,
+    name: "Heniken",
+    poster_path: "../assets/Heineken.jpg",
+  },
+  {
+    id: 2,
+    name: "Shell",
+    poster_path: "../assets/Shell_logo.svg.png",
+  },
+  {
+    id: 3,
+    name: "Metro",
+    poster_path: "../assets/metro.png",
+  },
+  {
+    id: 4,
+    name: "Pepsi",
+    poster_path: "../assets/pepsi.jpg",
+  },
+];

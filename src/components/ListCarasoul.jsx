@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import { fetchMoviesData } from "../api/apiService";
+import { fetchMoviesData, adLists } from "../api/apiService";
+import { AdLeftSide, AdRightSide } from "./Advertisment";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -22,11 +21,9 @@ function ListCarasoul() {
   useEffect(() => {
     fetchMovies();
   }, []);
-
   async function fetchMovies() {
     try {
       const response = await fetchMoviesData();
-      console.log("11111111", response);
       setListMoviesT(response);
     } catch (err) {
       throw err;
@@ -62,19 +59,23 @@ function ListCarasoul() {
         {listMoviesT.map((step, index) => (
           <div key={step.id}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <Box
-                component="img"
-                sx={{
-                  width: 350,
-                  height: 350,
-                  display: "block",
-                  // maxWidth: "400",
-                  overflow: "hidden",
-                  marginLeft: 60,
-                }}
-                src={`https://image.tmdb.org/t/p/w300/${step.poster_path}`}
-                alt={step.name}
-              />
+              <Box sx={{ display: "flex" }}>
+                <AdLeftSide />
+                <Box
+                  component="img"
+                  sx={{
+                    width: 350,
+                    height: 350,
+                    display: "block",
+                    // maxWidth: "400",
+                    overflow: "hidden",
+                    marginLeft: 35,
+                  }}
+                  src={`https://image.tmdb.org/t/p/w300/${step.poster_path}`}
+                  alt={step.name}
+                />
+                <AdRightSide />
+              </Box>
             ) : null}
           </div>
         ))}
