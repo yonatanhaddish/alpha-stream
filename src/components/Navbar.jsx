@@ -52,9 +52,3 @@ function Navbar() {
 }
 
 export default Navbar;
-{
-  /* <div className="icon">
-            {" "}
-            <FontAwesomeIcon icon={faSearch} style={{ height: "25px" }} />
-          </div> */
-}

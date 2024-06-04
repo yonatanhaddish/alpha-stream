@@ -14,17 +14,17 @@ export const adLists = [
   {
     id: 1,
     name: "Heniken",
-    poster_path: "../assets/Heineken.jpg",
+    poster_path: "../assets/pepsi.jpg",
   },
   {
     id: 2,
     name: "Shell",
-    poster_path: "../assets/Shell_logo.svg.png",
+    poster_path: "../assets/pepsi.jpg",
   },
   {
     id: 3,
     name: "Metro",
-    poster_path: "../assets/metro.png",
+    poster_path: "../assets/pepsi.jpg",
   },
   {
     id: 4,
