@@ -5,49 +5,43 @@ import { adLists } from "../api/apiService";
 function AdLeftSide() {
   const [adListLeft, setAdListLeft] = useState(adLists);
   const [adListIndex, setAdListIndex] = useState(0);
-  const [adSrcLeft, setAdSrcLeft] = useState(adLists[0].poster_path);
+  const [adNameLeft, setAdNameLeft] = useState(adListLeft[0].name);
   const len = adLists.length;
-  function fetchAdData() {
-    setAdListIndex(Math.floor(Math.random() * len));
-    setAdSrcLeft(adListLeft[adListIndex].poster_path);
-  }
 
+  function fetchAdData() {
+    setAdListLeft(adLists);
+    setAdListIndex(Math.floor(Math.random() * len));
+    setAdNameLeft(adListLeft[adListIndex].name);
+  }
   useEffect(() => {
     fetchAdData();
   }, []);
+
+  const test002 = require(`../assets/${adNameLeft}.png`);
   return (
     <>
-      {/* <Box
-        component="img"
-        src={require(adLists[0].poster_path)}
-        alt={adSrcLeft}
-        sx={{
-          border: "solid 2px red",
-          height: 300,
-          width: 100,
-          marginLeft: 10,
-        }}
-      /> */}
       <Box
+        component="img"
+        src={test002}
+        alt={adNameLeft}
         sx={{
           border: "solid 2px red",
           height: 300,
           width: 100,
           marginLeft: 10,
         }}
-      >
-        <img src={adLists[2].poster_path} alt={adSrcLeft} />
-      </Box>
+      />
     </>
   );
 }
 
 function AdRightSide() {
+  const test = require("../assets/Pepsi.png");
   return (
     <>
       <Box
         component="img"
-        src={require("../assets/Shell_logo.svg.png")}
+        src={test}
         alt="name"
         sx={{
           border: "solid 2px red",

@@ -13,22 +13,22 @@ export async function fetchMoviesData() {
 export const adLists = [
   {
     id: 1,
-    name: "Heniken",
-    poster_path: "../assets/pepsi.jpg",
+    name: "Heineken",
+    poster_path: "../assets/Heineken.jpg",
   },
   {
     id: 2,
     name: "Shell",
-    poster_path: "../assets/pepsi.jpg",
+    poster_path: "../assets/Shell.png",
   },
   {
     id: 3,
     name: "Metro",
-    poster_path: "../assets/pepsi.jpg",
+    poster_path: "../assets/Metro.png",
   },
   {
     id: 4,
     name: "Pepsi",
-    poster_path: "../assets/pepsi.jpg",
+    poster_path: "../assets/Pepsi.jpg",
   },
 ];

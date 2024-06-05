@@ -60,7 +60,6 @@ function ListCarasoul() {
           <div key={step.id}>
             {Math.abs(activeStep - index) <= 2 ? (
               <Box sx={{ display: "flex" }}>
-                <AdLeftSide />
                 <Box
                   component="img"
                   sx={{
@@ -69,12 +68,11 @@ function ListCarasoul() {
                     display: "block",
                     // maxWidth: "400",
                     overflow: "hidden",
-                    marginLeft: 35,
+                    marginLeft: 55,
                   }}
                   src={`https://image.tmdb.org/t/p/w300/${step.poster_path}`}
                   alt={step.name}
                 />
-                <AdRightSide />
               </Box>
             ) : null}
           </div>
