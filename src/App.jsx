@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ListCarasoul from "./components/ListCarasoul";
-import Movies from "./pages/Movies";
+import Home from "./pages/Home";
 import LearnCss from "./components/LearnCss";
 
 function App() {
@@ -15,8 +15,9 @@ function App() {
           <Routes>
             {/* <Route path="/" element={<ListCarasoul />} /> */}
             {/* <Route path="/movies" element={<Movies />} /> */}
+            <Route path="/" element={<Home />} />
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
         </div>
         {/* <LearnCss /> */}
       </Router>

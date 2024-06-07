@@ -17,18 +17,17 @@ function AdLeftSide() {
     fetchAdData();
   }, []);
 
-  const test002 = require(`../assets/${adNameLeft}.png`);
+  const advertise_left_side = require(`../assets/${adNameLeft}.png`);
   return (
     <>
       <Box
         component="img"
-        src={test002}
+        src={advertise_left_side}
         alt={adNameLeft}
         sx={{
-          border: "solid 2px red",
-          height: 300,
-          width: 100,
-          marginLeft: 10,
+          // border: "solid 2px red",
+          height: "300px",
+          width: "200px",
         }}
       />
     </>
@@ -44,7 +43,7 @@ function AdRightSide() {
         src={test}
         alt="name"
         sx={{
-          border: "solid 2px red",
+          // border: "solid 2px red",
           height: 300,
           width: 100,
           marginLeft: 35,

@@ -19,7 +19,7 @@
   margin-left: 30px;
 }
 .navbarListBox {
-  border: solid yellow 2px;
+  /* border: solid yellow 2px; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -29,23 +29,14 @@
 
 #navList a {
   text-decoration: none;
-  border: solid 1px #000;
-  background-color: burlywoode;
-  /* font-size: 20px; */
-  /* padding: 20px; */
 }
 .searchBox {
-  border: solid 2px blue;
-  /* font-size: 20px;  */
-  margin-right: 70px;
+  border: solid 2px #000;
+  margin-right: 80px;
 }
 
 .input {
-  /* height: 30px; */
-  /* padding-left: 10px; */
   font-size: 20px;
-  border: solid 2px blue;
-  /* margin-right: 30px; */
 }
 .footer {
   /* border: solid purple 1px; */
@@ -66,4 +57,18 @@
 }
 .policy p Link {
   text-decoration: none;
+}
+.home-body {
+  border: solid 4px black;
+  display: flex;
+  align-self: wrap;
+  height: 550px;
+  justify-content: space-around;
+  align-items: center;
+}
+.home-body-item {
+  border: solid 5px darkblue;
+}
+.carasoul {
+  border: solid 3px red;
 }

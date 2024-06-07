@@ -45,9 +45,9 @@ function ListCarasoul() {
   return (
     <Box
       sx={{
-        maxWidth: "100%",
-        flexGrow: 1,
-        marginTop: 3,
+        border: "solid 2px #000",
+        width: "700px",
+        height: "auto",
       }}
     >
       <AutoPlaySwipeableViews
@@ -62,14 +62,7 @@ function ListCarasoul() {
               <Box sx={{ display: "flex" }}>
                 <Box
                   component="img"
-                  sx={{
-                    width: 350,
-                    height: 350,
-                    display: "block",
-                    // maxWidth: "400",
-                    overflow: "hidden",
-                    marginLeft: 55,
-                  }}
+                  sx={{}}
                   src={`https://image.tmdb.org/t/p/w300/${step.poster_path}`}
                   alt={step.name}
                 />
@@ -78,35 +71,6 @@ function ListCarasoul() {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          >
-            Next
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back
-          </Button>
-        }
-      />
     </Box>
   );
 }
