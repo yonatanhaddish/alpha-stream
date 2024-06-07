@@ -15,13 +15,16 @@ function Navbar() {
     <>
       <div className="navbarBox">
         <div className="logoBox">
-          <FontAwesomeIcon
-            icon={faDesktop}
-            style={{
-              color: "#68198c",
-              fontSize: "40px",
-            }}
-          />
+          <Link to="/">
+            {" "}
+            <FontAwesomeIcon
+              icon={faDesktop}
+              style={{
+                color: "#0E46A3",
+                fontSize: "40px",
+              }}
+            />
+          </Link>
         </div>
         <div className="navbarListBox">
           <div className="homeBox" id="navList">

@@ -45,7 +45,7 @@ function ListCarasoul() {
   return (
     <Box
       sx={{
-        border: "solid 2px #000",
+        // border: "solid 2px #000",
         width: "700px",
         height: "auto",
       }}
@@ -62,7 +62,12 @@ function ListCarasoul() {
               <Box sx={{ display: "flex" }}>
                 <Box
                   component="img"
-                  sx={{}}
+                  sx={{
+                    // border: "solid 5px green",
+                    width: "600px",
+                    height: "400px",
+                    marginLeft: "50px",
+                  }}
                   src={`https://image.tmdb.org/t/p/w300/${step.poster_path}`}
                   alt={step.name}
                 />
