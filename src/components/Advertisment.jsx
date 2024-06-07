@@ -27,7 +27,7 @@ function AdLeftSide() {
         src={advertise_left_side}
         alt={adNameLeft}
         sx={{
-          // border: "solid 2px red",
+          border: "solid 4px #fff",
           height: "300px",
           width: "200px",
         }}
@@ -61,7 +61,7 @@ function AdRightSide() {
         src={advertise_right_side}
         alt={adNameRight}
         sx={{
-          // border: "solid 2px red",
+          border: "solid 4px #fff",
           height: "300px",
           width: "200px",
         }}
