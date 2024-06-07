@@ -1,5 +1,5 @@
 import React from "react";
-import { AdLeftSide } from "../components/Advertisment";
+import { AdLeftSide, AdRightSide } from "../components/Advertisment";
 import ListCarasoul from "../components/ListCarasoul";
 function Home() {
   return (
@@ -15,7 +15,7 @@ function Home() {
         </div>
         <div className="ad2 home-body-item">
           {" "}
-          <AdLeftSide />
+          <AdRightSide />
         </div>
       </div>
     </>
