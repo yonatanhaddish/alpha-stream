@@ -4,45 +4,48 @@
   margin: 0;
   font-family: "Source Sans Pro", "sans-serif";
 }
-.parentBox {
+/* .parentBox {
   background-color: #ededeb;
-}
+} */
 .navbarBox {
   /* border: solid green 2px; */
+  height: 70px;
   background-color: #c3d4f7;
   display: flex;
-  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 .logoBox {
-  font-size: 50px;
-  /* border: solid 2px red; */
-  padding: 10px 0 0 40px;
+  margin-left: 30px;
 }
 .navbarListBox {
-  /* border: solid purple 2px; */
-  margin-left: 60px;
-  padding-top: 15px;
+  border: solid yellow 2px;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 600px;
+  font-size: 25px;
 }
 
 #navList a {
   text-decoration: none;
-  /* border: solid 1px green; */
-  font-size: 20px;
-  padding: 20px;
+  border: solid 1px #000;
+  background-color: burlywoode;
+  /* font-size: 20px; */
+  /* padding: 20px; */
 }
 .searchBox {
-  display: flex;
-  /* border: solid 2px blue; */
-  padding-left: 120px;
-  padding-top: 30px;
-  /* font-size: 20px; */
+  border: solid 2px blue;
+  /* font-size: 20px;  */
+  margin-right: 70px;
 }
+
 .input {
-  height: 30px;
-  padding-left: 10px;
+  /* height: 30px; */
+  /* padding-left: 10px; */
   font-size: 20px;
-  border: solid 2px black;
+  border: solid 2px blue;
+  /* margin-right: 30px; */
 }
 .footer {
   /* border: solid purple 1px; */

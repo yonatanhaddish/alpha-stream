@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ListCarasoul from "./components/ListCarasoul";
 import Movies from "./pages/Movies";
+import LearnCss from "./components/LearnCss";
 
 function App() {
   return (
@@ -12,11 +13,12 @@ function App() {
         <div className="parentBox">
           <Navbar />
           <Routes>
-            <Route path="/" element={<ListCarasoul />} />
-            <Route path="/movies" element={<Movies />} />
+            {/* <Route path="/" element={<ListCarasoul />} /> */}
+            {/* <Route path="/movies" element={<Movies />} /> */}
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </div>
+        {/* <LearnCss /> */}
       </Router>
     </>
   );
