@@ -45,15 +45,16 @@
   /* border: solid 4px black; */
   display: flex;
   align-self: wrap;
-  height: 550px;
+  height: 400px;
   justify-content: space-around;
   align-items: center;
+  margin-top: 11px;
 }
 .footer {
   background-color: #000000;
   color: #fff;
   width: 100%;
-  height: 65px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
 }

@@ -16,10 +16,9 @@ function AdLeftSide() {
   useEffect(() => {
     fetchAdData();
   }, []);
-  setTimeout(fetchAdData, 5000);
+  setTimeout(fetchAdData, 7000);
 
   const advertise_left_side = require(`../assets/${adNameLeft}.png`);
-  console.log("4444", advertise_left_side);
   return (
     <>
       <Box
@@ -50,7 +49,7 @@ function AdRightSide() {
   useEffect(() => {
     fetchAdData();
   }, []);
-  setTimeout(fetchAdData, 5000);
+  setTimeout(fetchAdData, 7000);
 
   const advertise_right_side = require(`../assets/${adNameRight}.png`);
 
