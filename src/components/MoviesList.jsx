@@ -3,6 +3,7 @@ import { fetchMoviesData } from "../api/apiService";
 
 function MoviesList() {
   const [moviesList, setMoviesList] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState({});
 
   useEffect(() => {
     fetchMovies();
@@ -17,11 +18,20 @@ function MoviesList() {
       throw err;
     }
   }
+
+  function handleSingleMovieClick(data) {
+    setSelectedMovie(data);
+  }
   return (
     <>
       <div className="movies-list-parent-box">
         {moviesList.map((data) => (
-          <div className="single-movie" key={data.id}>
+          <div
+            className="single-movie"
+            key={data.id}
+            value={data.id}
+            onClick={(x) => handleSingleMovieClick(data)}
+          >
             <div className="image-box">
               <img
                 src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
