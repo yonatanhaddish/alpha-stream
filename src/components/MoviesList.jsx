@@ -19,7 +19,25 @@ function MoviesList() {
   }
   return (
     <>
-      <h1>Movies List</h1>
+      <div className="movies-list-parent-box">
+        {moviesList.map((data) => (
+          <div className="single-movie" key={data.id}>
+            <div className="image-box">
+              <img
+                src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
+                alt={data.title}
+                height={350}
+                width={250}
+              />
+            </div>
+            <div className="rating-box"></div>
+            <div className="title-box">
+              <h4>{data.title}</h4>
+              <p>{data.release_date}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

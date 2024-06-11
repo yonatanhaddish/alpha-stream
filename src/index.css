@@ -72,3 +72,24 @@
   text-decoration: none;
   color: #fff;
 }
+.movies-list-parent-box {
+  border: solid red 2px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  gap: 10px 20px;
+}
+.single-movie {
+  border: solid green 2px;
+  width: 300px;
+  margin-left: 10px;
+}
+.rating-box {
+  width: 40px;
+  height: 40px;
+  border: solid 2px #000;
+  border-radius: 60px;
+}
+.title-box {
+  border: solid purple 2px;
+}

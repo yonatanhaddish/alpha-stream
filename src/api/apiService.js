@@ -3,6 +3,17 @@ import axios from "axios";
 export async function fetchMoviesData() {
   try {
     const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/popular?api_key=d0f5f2e135336200362af8a1a73acb17`
+    );
+    return response.data.results;
+  } catch (err) {
+    throw err;
+  }
+}
+
+export async function fetchTvShowsData() {
+  try {
+    const response = await axios.get(
       `https://api.themoviedb.org/3/tv/popular?api_key=d0f5f2e135336200362af8a1a73acb17`
     );
     return response.data.results;
@@ -10,6 +21,7 @@ export async function fetchMoviesData() {
     throw err;
   }
 }
+
 export const adLists = [
   {
     id: 1,
