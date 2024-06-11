@@ -26,13 +26,15 @@ function MoviesList() {
               <img
                 src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
                 alt={data.title}
-                height={350}
                 width={250}
+                height={300}
               />
             </div>
-            <div className="rating-box"></div>
+            <div className="rating-box">
+              {Math.round(data.vote_average * 10)}
+            </div>
             <div className="title-box">
-              <h4>{data.title}</h4>
+              <h3>{data.title}</h3>
               <p>{data.release_date}</p>
             </div>
           </div>
