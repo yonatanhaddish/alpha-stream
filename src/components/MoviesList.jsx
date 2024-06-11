@@ -1,9 +1,28 @@
 import React, { useEffect, useState } from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+
 import { fetchMoviesData } from "../api/apiService";
+import MovieModal from "./ModalMovie";
 
 function MoviesList() {
   const [moviesList, setMoviesList] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState({});
+  const [openModal, setOpenModal] = useState(false);
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 600,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
 
   useEffect(() => {
     fetchMovies();
@@ -21,6 +40,10 @@ function MoviesList() {
 
   function handleSingleMovieClick(data) {
     setSelectedMovie(data);
+    setOpenModal(!openModal);
+  }
+  function handleCloseModal() {
+    setOpenModal(false);
   }
   return (
     <>
@@ -49,6 +72,26 @@ function MoviesList() {
             </div>
           </div>
         ))}
+      </div>
+      <div>
+        <Modal
+          open={openModal}
+          onClose={handleCloseModal}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              {selectedMovie.title}
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              {selectedMovie.overview}
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              {selectedMovie.release_date} | {selectedMovie.original_language}
+            </Typography>
+          </Box>
+        </Modal>
       </div>
     </>
   );

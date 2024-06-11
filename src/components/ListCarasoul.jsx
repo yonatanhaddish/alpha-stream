@@ -63,7 +63,6 @@ function ListCarasoul() {
                 <Box
                   component="img"
                   sx={{
-                    // border: "solid 5px green",
                     width: "600px",
                     height: "400px",
                     marginLeft: "50px",
