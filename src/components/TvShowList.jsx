@@ -3,11 +3,11 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
-import { fetchMoviesData } from "../api/apiService";
+import { fetchTvShowsData } from "../api/apiService";
 
-function MoviesList() {
-  const [moviesList, setMoviesList] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState({});
+function TvShowList() {
+  const [tvShowList, setTvShowList] = useState([]);
+  const [selectedTvShow, setSelectedTvShow] = useState({});
   const [openModal, setOpenModal] = useState(false);
 
   const style = {
@@ -23,20 +23,21 @@ function MoviesList() {
   };
 
   useEffect(() => {
-    fetchMovies();
+    fetchTvShows();
   }, []);
 
-  async function fetchMovies() {
+  async function fetchTvShows() {
     try {
-      const response = await fetchMoviesData();
-      setMoviesList(response);
+      const response = await fetchTvShowsData();
+      console.log("333", response);
+      setTvShowList(response);
     } catch (err) {
       throw err;
     }
   }
 
-  function handleSingleMovieClick(data) {
-    setSelectedMovie(data);
+  function handleSingleTvShowClick(data) {
+    setSelectedTvShow(data);
     setOpenModal(!openModal);
   }
   function handleCloseModal() {
@@ -45,12 +46,12 @@ function MoviesList() {
   return (
     <>
       <div className="movies-list-parent-box">
-        {moviesList.map((data) => (
+        {tvShowList.map((data) => (
           <div
             className="single-movie"
             key={data.id}
             value={data.id}
-            onClick={(x) => handleSingleMovieClick(data)}
+            onClick={(x) => handleSingleTvShowClick(data)}
           >
             <div className="image-box">
               <img
@@ -64,8 +65,8 @@ function MoviesList() {
               {Math.round(data.vote_average * 10)}
             </div>
             <div className="title-box">
-              <h3>{data.title}</h3>
-              <p>{data.release_date}</p>
+              <h3>{data.original_name}</h3>
+              <p>{data.first_air_date}</p>
             </div>
           </div>
         ))}
@@ -79,13 +80,13 @@ function MoviesList() {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              {selectedMovie.title}
+              {selectedTvShow.title}
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {selectedMovie.overview}
+              {selectedTvShow.overview}
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {selectedMovie.release_date} | {selectedMovie.original_language}
+              {selectedTvShow.release_date} | {selectedTvShow.original_language}
             </Typography>
           </Box>
         </Modal>
@@ -94,4 +95,4 @@ function MoviesList() {
   );
 }
 
-export default MoviesList;
+export default TvShowList;
