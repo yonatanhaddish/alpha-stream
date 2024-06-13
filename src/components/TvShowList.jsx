@@ -29,7 +29,6 @@ function TvShowList() {
   async function fetchTvShows() {
     try {
       const response = await fetchTvShowsData();
-      console.log("333", response);
       setTvShowList(response);
     } catch (err) {
       throw err;

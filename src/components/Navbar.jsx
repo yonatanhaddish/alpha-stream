@@ -8,7 +8,11 @@ function Navbar() {
 
   function handleSearch(e) {
     setSearchRestult(e.target.value);
-    console.log("333333333", searchResult);
+    if (window.document.URL.includes("/movies")) {
+      console.log("Movies URL");
+    } else if (window.document.URL.includes("/tv-shows")) {
+      console.log("Tv-Shows URL");
+    }
   }
 
   return (
