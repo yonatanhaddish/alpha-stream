@@ -45,9 +45,10 @@ function ListCarasoul() {
   return (
     <Box
       sx={{
-        // border: "solid 2px #000",
-        width: "700px",
-        height: "auto",
+        border: "solid 2px red",
+        width: "300px",
+        // height: "700px",
+        marginLeft: "60px",
       }}
     >
       <AutoPlaySwipeableViews
@@ -63,9 +64,9 @@ function ListCarasoul() {
                 <Box
                   component="img"
                   sx={{
-                    width: "600px",
-                    height: "400px",
-                    marginLeft: "50px",
+                    width: "300px",
+                    height: "300px",
+                    // marginLeft: "50px",
                   }}
                   src={`https://image.tmdb.org/t/p/w300/${step.poster_path}`}
                   alt={step.name}
