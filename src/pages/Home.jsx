@@ -6,9 +6,7 @@ function Home() {
     <>
       <div className="home-body">
         {/* <AdLeftSide /> */}
-        <ListCarasoul />
-        <ListCarasoul /> <ListCarasoul />
-        {/* <AdRightSide /> */}
+        <ListCarasoul />\{/* <AdRightSide /> */}
       </div>
     </>
   );

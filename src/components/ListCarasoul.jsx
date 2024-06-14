@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import MobileStepper from "@mui/material/MobileStepper";
-import Button from "@mui/material/Button";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import { fetchMoviesData, adLists } from "../api/apiService";
-import { AdLeftSide, AdRightSide } from "./Advertisment";
+import { fetchMoviesData } from "../api/apiService";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -29,24 +24,14 @@ function ListCarasoul() {
       throw err;
     }
   }
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
-
   return (
     <Box
       sx={{
         border: "solid 2px red",
-        width: "300px",
+        // width: "300px",
         // height: "700px",
         marginLeft: "60px",
       }}
@@ -63,11 +48,13 @@ function ListCarasoul() {
               <Box sx={{ display: "flex" }}>
                 <Box
                   component="img"
-                  sx={{
-                    width: "300px",
-                    height: "300px",
-                    // marginLeft: "50px",
-                  }}
+                  sx={
+                    {
+                      // width: "300px",
+                      // height: "300px",
+                      // marginLeft: "50px",
+                    }
+                  }
                   src={`https://image.tmdb.org/t/p/w300/${step.poster_path}`}
                   alt={step.name}
                 />
