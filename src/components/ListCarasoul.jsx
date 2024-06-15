@@ -7,11 +7,10 @@ import { fetchMoviesData } from "../api/apiService";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-function ListCarasoul() {
+function ListCarasoul({ direction }) {
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
   const [listMoviesT, setListMoviesT] = useState([]);
-  const maxSteps = listMoviesT.length;
 
   useEffect(() => {
     fetchMovies();
@@ -31,16 +30,15 @@ function ListCarasoul() {
     <Box
       sx={{
         border: "solid 2px red",
-        // width: "300px",
+        width: "50%",
         // height: "700px",
         marginLeft: "60px",
       }}
     >
       <AutoPlaySwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+        axis={theme.direction === `${direction}` ? "x-reverse" : "x-reverse"}
         index={activeStep}
         onChangeIndex={handleStepChange}
-        enableMouseEvents
       >
         {listMoviesT.map((step, index) => (
           <div key={step.id}>

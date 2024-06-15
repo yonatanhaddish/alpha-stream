@@ -102,3 +102,10 @@
 /* .title-box {
   border: solid purple 2px;
 } */
+.carasoul-parent {
+  border: solid 3px red;
+}
+.carasoul-child-img img {
+  border: solid 3px blue;
+  width: 200px;
+}
