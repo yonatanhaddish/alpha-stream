@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Carousel } from "primereact/carousel";
-import { fetchMoviesData } from "../api/apiService";
+import { fetchMoviesData, fetchTvShowsData } from "../api/apiService";
 
 function Carasoul() {
   const [listMoviesT, setListMoviesT] = useState([]);
+  const [tvShowList, setTvShowList] = useState([]);
 
   useEffect(() => {
     fetchMovies();
+  }, []);
+  useEffect(() => {
+    // fetchTvShows();
   }, []);
   async function fetchMovies() {
     try {
@@ -16,22 +20,22 @@ function Carasoul() {
       throw err;
     }
   }
+  async function fetchTvShows() {
+    try {
+      const response = await fetchTvShowsData();
+      setTvShowList(response);
+    } catch (err) {
+      throw err;
+    }
+  }
 
   function movieTemplate(movie) {
     return (
       <>
-        {/* <div className="border-1 surface-border border-round m-2 text-center py-5 px-3">
-          <div className="mb-2">
-            <img
-              src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-              alt={movie.title}
-              className="w-6 shadow-2"
-            />
-          </div>
-        </div> */}
         <div className="carasoul-parent">
           <div className="carasoul-child-img">
             <img
+              className="imge-carasoul"
               src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
               alt={movie.title}
             />

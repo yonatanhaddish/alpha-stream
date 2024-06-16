@@ -24,7 +24,7 @@ function Navbar() {
             <FontAwesomeIcon
               icon={faDesktop}
               style={{
-                color: "#0E46A3",
+                color: "#fff",
                 fontSize: "40px",
               }}
             />
