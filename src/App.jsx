@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import TvShows from "./pages/TvShows";
+import SearchByLanguage from "./pages/SearchByLanguage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/tv-shows" element={<TvShows />} />
+            <Route path="//browseByLanguages" element={<SearchByLanguage />} />
           </Routes>
           <Footer />
         </div>

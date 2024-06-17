@@ -29,6 +29,7 @@ function MoviesList() {
   async function fetchMovies() {
     try {
       const response = await fetchMoviesData();
+      console.log("111", response);
       setMoviesList(response);
     } catch (err) {
       throw err;
