@@ -5,20 +5,11 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 
-function RadioButtonsGroup() {
-  const [order, setOrder] = useState("asc");
-  const [movieType, setMovieType] = useState("movies");
-  const [language, setLanguage] = useState("all");
-
-  function handleOrderChange(event) {
-    setOrder(event.target.value);
-  }
-  function handleMovieTypeChange(event) {
-    setMovieType(event.target.value);
-  }
-  function handleLanguageChange(event) {
-    setLanguage(event.target.value);
-  }
+function RadioButtonsGroup({
+  handleOrderChange,
+  handleMovieTypeChange,
+  handleLanguageChange,
+}) {
   return (
     <>
       <FormControl>
