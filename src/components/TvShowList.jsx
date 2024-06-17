@@ -29,7 +29,7 @@ function TvShowList() {
   async function fetchTvShows() {
     try {
       const response = await fetchTvShowsData();
-      console.log("222", response);
+      // console.log("222", response.original_language);
       setTvShowList(response);
     } catch (err) {
       throw err;
