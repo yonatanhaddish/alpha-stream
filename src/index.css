@@ -106,3 +106,10 @@
   width: 100%;
   padding: 5px;
 }
+.parent-filter {
+  border: solid 2px pink;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 30px;
+}
