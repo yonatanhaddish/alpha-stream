@@ -7,8 +7,8 @@ function SearchByLanguage() {
   const [order, setOrder] = useState("asc");
   const [movieType, setMovieType] = useState("movies");
   const [language, setLanguage] = useState("all");
-  const [moviesList, setMoviesList] = useState([]);
-  const [tvShowsList, setTvShowsList] = useState([]);
+
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     getAllList();
@@ -17,13 +17,11 @@ function SearchByLanguage() {
     try {
       const responseMovies = await fetchMoviesData();
       const responseTvShows = await fetchTvShowsData();
-      setMoviesList(responseMovies);
-      setTvShowsList(responseTvShows);
+      setMovies(responseMovies);
     } catch (err) {
       throw err;
     }
   }
-
   function handleOrderChange(event) {
     setOrder(event.target.value);
   }
@@ -45,8 +43,7 @@ function SearchByLanguage() {
         order={order}
         movieType={movieType}
         language={language}
-        moviesList={moviesList}
-        tvShowsList={tvShowsList}
+        movies={movies}
       />
     </>
   );

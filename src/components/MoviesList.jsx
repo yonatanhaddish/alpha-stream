@@ -35,7 +35,6 @@ function MoviesList() {
       throw err;
     }
   }
-
   function handleSingleMovieClick(data) {
     setSelectedMovie(data);
     setOpenModal(!openModal);
