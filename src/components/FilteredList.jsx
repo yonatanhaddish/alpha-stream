@@ -60,54 +60,56 @@ function FilteredList({ order, movieType, language, movies, tvShows }) {
 
   return (
     <>
-      <>
-        <div className="movies-list-parent-box">
-          {filteredListMovie.map((data) => (
-            <div
-              className="single-movie"
-              key={data.id}
-              value={data.id}
-              onClick={(x) => handleSingleMovieClick(data)}
-            >
-              <div className="image-box">
-                <img
-                  src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
-                  alt={data.title}
-                  width={250}
-                  height={300}
-                />
-              </div>
-              <div className="rating-box">
-                {Math.round(data.vote_average * 10)}
-              </div>
-              <div className="title-box">
-                <h3>{data.title}</h3>
-                <p>{data.release_date}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div>
-          <Modal
-            open={openModal}
-            onClose={handleCloseModal}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
+      <div className="filter-list-parent-box">
+        {filteredListMovie.map((data) => (
+          <div
+            className="single-movie"
+            key={data.id}
+            value={data.id}
+            onClick={(x) => handleSingleMovieClick(data)}
           >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                {selectedMovie.title}
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {selectedMovie.overview}
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {selectedMovie.release_date} | {selectedMovie.original_language}
-              </Typography>
-            </Box>
-          </Modal>
-        </div>
-      </>
+            <div className="image-box">
+              <img
+                src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
+                alt={data.title}
+                width={250}
+                height={300}
+              />
+            </div>
+            <div className="rating-box">
+              {Math.round(data.vote_average * 10)}
+            </div>
+            <div className="title-box">
+              <h3>
+                {data.title} {data.original_name}
+              </h3>
+              <p>
+                {data.release_date} {data.first_air_date}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div>
+        <Modal
+          open={openModal}
+          onClose={handleCloseModal}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              {selectedMovie.title}
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              {selectedMovie.overview}
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              {selectedMovie.release_date} | {selectedMovie.original_language}
+            </Typography>
+          </Box>
+        </Modal>
+      </div>
     </>
   );
 }

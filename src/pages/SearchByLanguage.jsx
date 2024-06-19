@@ -36,18 +36,20 @@ function SearchByLanguage() {
 
   return (
     <>
-      <Filter
-        handleLanguageChange={handleLanguageChange}
-        handleOrderChange={handleOrderChange}
-        handleMovieTypeChange={handleMovieTypeChange}
-      />
-      <FilteredList
-        order={order}
-        movieType={movieType}
-        language={language}
-        movies={movies}
-        tvShows={tvShows}
-      />
+      <div className="filter-list-box">
+        <Filter
+          handleLanguageChange={handleLanguageChange}
+          handleOrderChange={handleOrderChange}
+          handleMovieTypeChange={handleMovieTypeChange}
+        />
+        <FilteredList
+          order={order}
+          movieType={movieType}
+          language={language}
+          movies={movies}
+          tvShows={tvShows}
+        />
+      </div>
     </>
   );
 }

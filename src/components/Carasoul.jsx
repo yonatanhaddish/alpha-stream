@@ -53,7 +53,7 @@ function Carasoul() {
         numScroll={1}
         className="custom-carousel"
         circular
-        autoplayInterval={3000}
+        autoplayInterval={2000}
         itemTemplate={movieTemplate}
       />
     </div>
