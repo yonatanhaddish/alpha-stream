@@ -9,6 +9,7 @@ function SearchByLanguage() {
   const [language, setLanguage] = useState("all");
 
   const [movies, setMovies] = useState([]);
+  const [tvShows, setTvShows] = useState([]);
 
   useEffect(() => {
     getAllList();
@@ -18,6 +19,7 @@ function SearchByLanguage() {
       const responseMovies = await fetchMoviesData();
       const responseTvShows = await fetchTvShowsData();
       setMovies(responseMovies);
+      setTvShows(responseTvShows);
     } catch (err) {
       throw err;
     }
@@ -44,6 +46,7 @@ function SearchByLanguage() {
         movieType={movieType}
         language={language}
         movies={movies}
+        tvShows={tvShows}
       />
     </>
   );
