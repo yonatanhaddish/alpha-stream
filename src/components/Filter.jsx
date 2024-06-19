@@ -60,6 +60,7 @@ function RadioButtonsGroup({
             <FormControlLabel value="en" control={<Radio />} label="English" />
             <FormControlLabel value="fr" control={<Radio />} label="French" />
             <FormControlLabel value="ko" control={<Radio />} label="Korean" />
+            <FormControlLabel value="es" control={<Radio />} label="Spanish" />
           </RadioGroup>
         </FormControl>
       </div>
