@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDesktop, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-function Navbar() {
-  const [searchResult, setSearchRestult] = useState("");
+function Navbar({ handleSearch }) {
+  const [searchResult, setSearchResult] = useState("");
 
   function handleSearch(e) {
-    setSearchRestult(e.target.value);
+    setSearchResult(e.target.value);
     if (window.document.URL.includes("/movies")) {
       console.log("Movies URL");
     } else if (window.document.URL.includes("/tv-shows")) {
@@ -47,7 +47,7 @@ function Navbar() {
         <div className="searchBox">
           <input
             className="input"
-            placeholder="Search"
+            placeholder="Search component in progress!!!"
             value={searchResult}
             onChange={handleSearch}
             size={30}
