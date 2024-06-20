@@ -16,7 +16,7 @@ function RadioButtonsGroup({
     <>
       <div className="parent-filter">
         <FormControl>
-          <FormControl id="simgle-form-control">
+          <FormControl id="single-form-control">
             <FormLabel id="demo-radio-buttons-group-label">Asc/Dec</FormLabel>
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
@@ -28,7 +28,7 @@ function RadioButtonsGroup({
               <FormControlLabel value="dsc" control={<Radio />} label="Dsc" />
             </RadioGroup>
           </FormControl>
-          <FormControl id="simgle-form-control">
+          <FormControl id="single-form-control">
             <FormLabel id="demo-radio-buttons-group-label">
               Movies/TV-Shows
             </FormLabel>
@@ -50,7 +50,7 @@ function RadioButtonsGroup({
               />
             </RadioGroup>
           </FormControl>
-          <FormControl id="simgle-form-control">
+          <FormControl id="single-form-control">
             <FormLabel id="demo-radio-buttons-group-label">Language</FormLabel>
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"

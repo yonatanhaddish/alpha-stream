@@ -60,12 +60,14 @@ function MoviesList() {
                 height={300}
               />
             </div>
-            <div className="rating-box">
-              {Math.round(data.vote_average * 10)}
-            </div>
-            <div className="title-box">
-              <h3>{data.title}</h3>
-              <p>{data.release_date}</p>
+            <div className="rating-title-box">
+              <div className="rating-box">
+                {Math.round(data.vote_average * 10)}
+              </div>
+              <div className="title-box">
+                <h3>{data.title}</h3>
+                <p>{data.release_date}</p>
+              </div>
             </div>
           </div>
         ))}
