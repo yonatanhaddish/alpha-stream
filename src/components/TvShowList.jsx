@@ -16,7 +16,8 @@ function TvShowList() {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 600,
-    bgcolor: "background.paper",
+    bgcolor: "#0e46a3",
+    color: "#fdb827",
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
@@ -29,7 +30,7 @@ function TvShowList() {
   async function fetchTvShows() {
     try {
       const response = await fetchTvShowsData();
-      // console.log("222", response);
+      console.log("222", response);
       setTvShowList(response);
     } catch (err) {
       throw err;
@@ -61,12 +62,13 @@ function TvShowList() {
                 height={300}
               />
             </div>
-            <div className="rating-box">
-              {Math.round(data.vote_average * 10)}
-            </div>
-            <div className="title-box">
-              <h3>{data.original_name}</h3>
-              <p>{data.first_air_date}</p>
+            <div className="rating-title-box">
+              <div className="rating-box">
+                {Math.round(data.vote_average * 10)}
+              </div>
+              <div className="title-box">
+                <h3>{data.original_name}</h3>
+              </div>
             </div>
           </div>
         ))}
@@ -80,13 +82,15 @@ function TvShowList() {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              {selectedTvShow.title}
+              {selectedTvShow.name}
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               {selectedTvShow.overview}
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {selectedTvShow.release_date} | {selectedTvShow.original_language}
+              First Air Date: {selectedTvShow.first_air_date}
+              <br />
+              Language: {selectedTvShow.original_language}
             </Typography>
           </Box>
         </Modal>

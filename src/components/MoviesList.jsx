@@ -16,7 +16,8 @@ function MoviesList() {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 600,
-    bgcolor: "background.paper",
+    bgcolor: "#0e46a3",
+    color: "#fdb827",
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
@@ -66,7 +67,6 @@ function MoviesList() {
               </div>
               <div className="title-box">
                 <h3>{data.title}</h3>
-                <p>{data.release_date}</p>
               </div>
             </div>
           </div>
@@ -87,7 +87,9 @@ function MoviesList() {
               {selectedMovie.overview}
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {selectedMovie.release_date} | {selectedMovie.original_language}
+              Release Date: {selectedMovie.release_date}
+              <br />
+              Language: {selectedMovie.original_language}
             </Typography>
           </Box>
         </Modal>

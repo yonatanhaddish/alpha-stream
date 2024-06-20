@@ -68,27 +68,26 @@
   color: #fff;
 }
 .movies-list-parent-box {
-  /* border: solid red 2px; */
-  margin-top: 20px;
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
-  gap: 40px 10px;
+  gap: 20px 10px;
 }
-/* .title-box {
-  border: solid 2px purple;
-  margin-left: 20px;
-} */
+
 .single-movie {
   /* border: solid #0e46a3 1px; */
   margin-left: 20px;
   background-color: #fdb827;
-  color: #21209c;
+  color: #20289c;
 }
 .image-box {
   /* border: solid black 2px; */
   margin-left: 15px;
   margin-top: 15px;
+}
+.title-box h3 {
+  font-family: " Arial Narrow", sans-serif;
+  text-align: center;
 }
 .rating-title-box {
   /* border: solid 2px yellowgreen; */
@@ -97,14 +96,16 @@
   margin-top: -4px;
 }
 .rating-box {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: solid 2px #000;
   border-radius: 60px;
-  padding-left: 9px;
+  padding-left: 6px;
   padding-top: 5px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
+  background-color: red;
+  color: #fff;
 }
 
 .imge-carasoul {
@@ -124,15 +125,20 @@
 }
 .parent-filter {
   justify-self: center;
-
-  height: 600px;
+  height: 500px;
 }
 #demo-radio-buttons-group-label {
   font-size: 15px;
   font-weight: 900;
   font-family: "Courier New", Courier, monospace;
+  color: #20289c;
 }
 #single-form-control {
   border: solid 1px #0e46a3;
+  background-color: #fdb827;
   margin: 5px;
+}
+.carasoul-parent {
+  border: 4px solid #fdb827;
+  background-color: #fdb827;
 }

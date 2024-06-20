@@ -13,12 +13,12 @@ function FilteredList({ order, movieType, language, movies, tvShows }) {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 600,
-    bgcolor: "background.paper",
+    bgcolor: "#0e46a3",
+    color: "#fdb827",
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
   };
-
   let filteredListMovie = [];
   if (movieType === "movies") {
     filteredListMovie = movies;
@@ -60,7 +60,7 @@ function FilteredList({ order, movieType, language, movies, tvShows }) {
 
   return (
     <>
-      <div className="filter-list-parent-box">
+      <div className="movies-list-parent-box">
         {filteredListMovie.map((data) => (
           <div
             className="single-movie"
@@ -76,16 +76,15 @@ function FilteredList({ order, movieType, language, movies, tvShows }) {
                 height={300}
               />
             </div>
-            <div className="rating-box">
-              {Math.round(data.vote_average * 10)}
-            </div>
-            <div className="title-box">
-              <h3>
-                {data.title} {data.original_name}
-              </h3>
-              <p>
-                {data.release_date} {data.first_air_date}
-              </p>
+            <div className="rating-title-box">
+              <div className="rating-box">
+                {Math.round(data.vote_average * 10)}
+              </div>
+              <div className="title-box">
+                <h3>
+                  {data.title} {data.original_name}
+                </h3>
+              </div>
             </div>
           </div>
         ))}
@@ -99,13 +98,16 @@ function FilteredList({ order, movieType, language, movies, tvShows }) {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              {selectedMovie.title}
+              {selectedMovie.title} {selectedMovie.name}
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {selectedMovie.overview}
+              {selectedMovie.overview} {selectedMovie.overview}
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {selectedMovie.release_date} | {selectedMovie.original_language}
+              First Air Date: {selectedMovie.release_date}{" "}
+              {selectedMovie.first_air_date}
+              <br />
+              Language: {selectedMovie.original_language}
             </Typography>
           </Box>
         </Modal>
